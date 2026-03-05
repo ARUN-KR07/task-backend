@@ -24,6 +24,7 @@ export * from './users.service.js'
 
 export const users = app => {
   app.use(usersPath, new UsersService(getOptions(app)), {
+  
     methods: usersMethods,
     events: []
   })

@@ -1,9 +1,7 @@
-const { UsersService } = require('./users.class');
-const createModel = require('../../models/users.model');
-const usersHooks = require('./users.hooks');
+import { UsersService } from './users.class.js';
+import * as usersHooks from './users.hooks.js';
 
-module.exports = function (app) {
-
+export default function (app) {
   const options = {
     Model: createModel(app),
     paginate: app.get('paginate')
@@ -12,6 +10,5 @@ module.exports = function (app) {
   app.use('/users', new UsersService(options, app));
 
   const service = app.service('users');
-
-  service.hooks(usersHooks);  
-};
+  service.hooks(usersHooks);
+}
