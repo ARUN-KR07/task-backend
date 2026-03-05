@@ -48,7 +48,7 @@ export const usersPatchSchema = Type.Partial(
 export const usersPatchValidator = getValidator(usersPatchSchema, dataValidator)
 export const usersPatchResolver = resolve({})
 
-// Query schema
+
 export const usersQueryProperties = Type.Pick(usersSchema, [
   'id',
   'name',

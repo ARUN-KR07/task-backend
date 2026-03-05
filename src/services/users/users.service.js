@@ -9,11 +9,9 @@ module.exports = function (app) {
     paginate: app.get('paginate')
   };
 
-  // Initialize our service
   app.use('/users', new UsersService(options, app));
 
-  // Get our initialized service to register hooks
   const service = app.service('users');
 
-  service.hooks(usersHooks);  // attach hooks here
+  service.hooks(usersHooks);  
 };
